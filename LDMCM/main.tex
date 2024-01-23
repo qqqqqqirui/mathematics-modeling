@@ -24,6 +24,9 @@
 %\usepackage{mathpazo}  % 这是 COMAP 官方杂志采用的更好看的 Palatino 字体，可替代以上的 mathptmx 宏包
 
 \usepackage{wallpaper}
+\usepackage{colortbl}  %彩色表格需要加载的宏包
+\usepackage{xcolor}
+\usepackage{array}   %对表列和表格线的设置需要用到array宏包
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{wrapfig}
@@ -381,7 +384,8 @@ Based on the game lifecycle and player lifecycle theory[4], and combined with Wo
 
 % \noindent
 % \begin{itemize}{\leftmargin=0pt\setlength{\parindent}{0pt}}
-% 	\item Phase 1: Rapid Growth Period (January 7\, 2022-February 2\, 2022)
+% 	\item {Phase 1:} 
+% 	\\Rapid Growth Period (January 7\, 2022-February 2\, 2022)
 % \end{itemize}
 
 \raisebox{-0.8ex}{\scalebox{2.2}{\textbullet}}\hspace{0.5em} Phase 1: Rapid Growth Period (January 7\, 2022-February 2\, 2022)
@@ -488,7 +492,7 @@ Predicting the number of reported results is a problem in the field oftime serie
 % \end{longtable}
 
 \subsubsection{ARIMA Forecasting}
-We first used the traditional ARlMA model for point prediction of the number ofreported results, and this process is shown in \ref{fg:process}:
+We first used the traditional ARlMA model for point prediction of the number ofreported results, and this process is shown in Figure \ref{fg:process}:
 \begin{figure}[htbp]
 	\includegraphics[width=\textwidth]{1706015643684.png}
 	\caption{ARIMA model building process}
@@ -497,53 +501,178 @@ We first used the traditional ARlMA model for point prediction of the number ofr
 
 First, we performed ADF smoothness test on the variable “Number ofreported resultsin the preprocessed data set and found that it wasn't smooth. Therefore, we differencedthe series to the first order and tested the diferenced series again. After that, weobserved the ACF and PACF plot of the differenced series, and found that the ACF plotshowed the characteristics of trailing tails and the PACF plot showed the characteristicsof lst order truncated tails. Therefore, the following ARIMA(1.1.0) model can bedeveloped for the original series:
 
-\begin{equation}
+\begin{equation*}
 	\centering
 	\begin{cases}
 		(1-\phi_1B)(1-B)x_t=\varepsilon_t\\
 		E(\varepsilon_t)=0,Var(\varepsilon_t)={\sigma_{\varepsilon}}^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t,\\
 		E(x_s\varepsilon_t)=\mathbf{0},\forall s<t
 	\end{cases}
-\end{equation}
+\end{equation*}
 where $x_t$ is the $t^th$ time series value, $B$ is the delay operator, $\phi_1$ is the coeffcient of the moving self-averaging polynomial.
 
 \subsubsection{BP Neural Network Prediction}
 BP neural network is a multilayer feedforward neural network trained according to theerror back propagation algorithm, which can iterate and repair its own weightscontinuously based on the relationship between input and output variables so as tofinally estimate the exact functional relationship\upcite{6}. Its algorithm is explained by thefollowing pseudo-code. :
 
+
+% \begin{algorithm}[H]
+% 	\KwIn{Training set D}
+% 	\KwOut{test set E}{
+% 		% initialization\;
+% 		\hspace{1.5em}\begin{tabular}{|l}
+% 			Learning rate ŋ;Data normalization(normalization formula)\\
+% 			Create network;Train the network
+% 		\end{tabular}
+		
+% 		\hspace{1.5em}\begin{tabular}{|l}
+% 			\hspace{2em}\begin{tabular}{|l}
+% 				repeat for D\\
+% 				Forward propagation;Backward propagation\\
+% 				until for reaches end condition
+% 			\end{tabular}\\
+% 			Using the network;Inverse normalization of data\\
+% 			BP neural network prediction with test set E
+% 		\end{tabular}
+		
+% 	\textbf{end:}The completed BP neural network trained}
+% \end{algorithm}
+
 \begin{algorithm}[H]
-	\KwIn{Training set D}
-	\KwOut{Test set E}
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\Repeat{this end condition}{
-			do these things\;
-		}
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-		\Do{this end condition}{
-			do these things\;
-		}
-	}
-	\caption{How to write algorithms}
+	\KwIn{Training set $D$}
+	\KwOut{Test set $E$}{
+		\hspace{1.5em}\begin{tabular}{|l}
+		Learning rate $\eta$;Data normalization (normalization formula)\\
+		Create network; Train the network\\
+	    \end{tabular}
+
+		\hspace{1.5em}\begin{tabular}{|l}
+			\hspace{2em}\begin{tabular}{|l}
+			repeat for D\\
+			Forward propagation; Backward propagation\\
+			until for reaches end condition
+		\end{tabular}\\
+		Using the network; Inverse normalization of data\\
+		BP neural network prediction with test set E
+	\end{tabular}\\
+	\textbf{end:}The completed BP neural network trained}
+	\caption{Prediction of the Number of Reported Results}
 \end{algorithm}
 
 %===============================================第四部分=============================================
-\section{Test the Model}
-\subsection{Sensitivity  Analysis}
-\subsection{Robustness Analysis}
-\texttt{这部分很重要，不能缺！}
+\subsubsection{Analysis of the Results}
+The result obtained using the ARlMA(1,1,0) model prediction is shown in Figure \ref{fg:5}.and using the BP neural network model prediction is shown in Figure \ref{fg:6}:
+\begin{figure}[!htbp]
+	\centering
+	\begin{subfigure}[t]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{1706018588496.png}
+		\caption{ARIMA prediction effect}
+		\label{fg:5}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{1706018630565.png}
+		\caption{BP neural network prediction effect}
+		\label{fg:6}
+	\end{subfigure}
+	\caption{Three images}
+	\label{Three images}
+\end{figure}
 
+It can be seen that the ARlMA model has a better effect prediction, and the pointprediction Pa obtained using this model for the number of results reported on March 1.2023 is about 20598.84. BP neural network model has some bias in the early stage buthas relatively good prediction effect in the later stage. The point prediction value Peobtained using this model on March 1, 2023 is about 19496.05.
 
+\subsubsection{Weighted Portfolio Model Forecast}
+In order to improve the accuracy and robustness of the model prediction, we derived anew combined ARlMA-BP prediction model based on ARlMA and BP neural networkmodel by using the prediction errors to weight the two models. The design idea of thisweighted combined forecasting model is shown in Figure \ref{fg:7}:
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{1706018870335.png}
+	\caption{Combined model design}
+	\label{fg:7}
+\end{figure}
+We first calculate the average prediction error for each of the two prediction models:
+\begin{equation*}
+	\overline{PEA^2}=\frac{1}{N}\sum_{i=1}^{N}(R_i-P_{Ai})^2,\overline{PEB^2}=\frac{1}{N}\sum_{i=1}^{N}(R_i-P_{Bi})^2.
+\end{equation*}
+%!!!!overline{}, frac{}{}, \sum{i=1}^{N},
+After that, we use the share of the average prediction error squared of either model inthe total average prediction error squared of the two models to reflect the weightaccounted for by the other model, i.e.
+%!!!i.e
+\begin{equation*}
+	w_A=\frac{\overline{PEB}^2}{\overline{PEA}^2+\overline{PEB}^2}\approx0.406,  w_B=\frac{\overline{PEA}^2}{\overline{PEA}^2+\overline{PEB}^2}\approx0.594
+\end{equation*} 
+Thus, the point prediction value of the $i^th$series in the final ARIMA-BP combination model obtained is calculated as:
+\begin{equation}
+	P_i=w_{A}P_{Ai}+w_{B}P_{Bi}\label{eq:1}
+\end{equation}
 
+\newpage
+Through the analysis of the prediction errors above, it is obvious that the overalprediction error ofARlMA model is relatively high, while the BP neural network modelmay be overfitted. Therefore, the combined ARlMA-BP prediction model can correctthe errors of these two models, thus making the prediction results more realistic.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\textwidth]{1706020552100.png}
+	\caption{Prediction errors of the three models}
+	\label{fg:8}
+\end{figure}
+The final point forecast for the number of results reported on March 1, 2023 using thiscombined ARIMA-BP model is approximately 19944.
 
+\subsection{Interval Prediction Based on Bootstrap Model}
+Bootstrap Method
+%!!!!set[9]
+The Bootstrap method is an important method used in statistics for interval prediction,which first assumes that the data set obeys an unknown distribution, and later estimatesthe distribution interval of the sample by repeatedly sampling the given data set [7].Wetook the data predicted under the weighted combination model for the next 60 periodsas the sample set, after which we sampled it 1000 times with put-back to obtain the1000 Bootstrap sample set, $y_B$=($Y$,$Y_2$,\textbullet\textbullet\textbullet\textbullet\textbullet\textbullet, $Y_1000$).
+\\
+For each subsample, the distribution is in line with that ofthe sample, so we calculatedthe standard deviation (SD) ofthese 1000 subsample sets as the SD ofthe sample:
 
+\begin{equation*}
+	\sqrt{Var(y)}=\sqrt{\frac{1}{N-1}\sum_{i=1}^{N}(y_i-\overline{y})^2}
+\end{equation*}
+According to the central limit theorem, it is known that the set of samples obtained byconducting 1000 draws approximately obeys the normal distribution. Therefore, the upper and lower limits ofthe confidence interval of the sample at confidence level 1-$\alpha$ be calculated with the help of z-statistic:
+\begin{equation}
+	y=\stackrel{\wedge}{y}\pm Z_{\alpha/2}\times\sqrt{Var(y)}.\label{eq:2}
+\end{equation}
+Taking the confidence levels of 95\%, 90\% and 80\% respectively, the final prediction intervals for the number of results reported on March 1, 2023 are shown in Table \ref{tab:addlabel}
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
 
+%!!!!!颜色
+\begin{table}[htbp]
+    \centering  % 居中
+    \caption{Confidence Intervals}
+	\arrayrulecolor{blue}
+	\setlength{\tabcolsep}{0.09\textwidth}{
+    \begin{tabular}{|c|c|c|}
+		\arrayrulecolor{blue}\hline
+        \textbf{Confidence level} & \textbf{Lower limit} & \textbf{Upper limit} \\
+        \arrayrulecolor{blue}\hline
+		\rowcolor{blue!20}95\% & 19504.74 & 20383.26 \\
+		\arrayrulecolor{blue}\hline
+        90\% & 19575.33 & 20312.67 \\
+		\arrayrulecolor{blue}\hline
+        \rowcolor{blue!20}80\% & 19656.69 & 20231.31 \\
+		\arrayrulecolor{blue}\hline
+    \end{tabular}}
+    \label{tab:addlabel}
+\end{table}
 
+\section{Exploring the Impact of Word Attributes on Hard Mode Based on Multiple Linear Regression Model}
+
+Exploring the effects of certain attributes of words on the proportion of playerschoosing Hard Mode is a multiple-input variable, single-output variable modelingproblem. We decided to develop a multiple linear regression model to derive whetherword attributes affect the percentage of scores reported that were played in Hard Modeand the extent oftheir effects. The input variables X1-X7 are defined as follows.
+\subsection{Defining Qualitative Attributes of Words}
+First we made an overview of all the words in the dataset, and drew a word cloud mapfor the 356 words after preprocessing in Figure 9. We found that each word is differentand its frequency is l, so its size in the word cloud map is about the same.
+\subsection{Defining Quatitative Attributes of Words}
+\begin{equation}
+	WID_n=\sum_{i=1}^{4}|L_{i+1}-L_i|, n=1,2,3,\cdots,357
+\end{equation}
+
+\subsection{Building a Multiple Linear Regression Model}
+
+\begin{equation*}
+	\centering
+	X_1=\begin{cases}1, noun\\2, verb\\3, adjective\\4, other\end{cases}, X_2=\begin{cases}1, commom\\2, uncommom\end{cases}, X_3=\begin{cases}1, vowel\\2, consonant\end{cases}
+\end{equation*}
+The dependent variable (Y) is the percentage of scores reported that were played in Hard Mode, which can be calculated according to equation \eqref{eq:4}.
+\begin{equation}
+	Y=\frac{Number in hard mode}{Number of reported results}\times100\%
+	\label{eq:4}
+\end{equation}
+%\texttt{这部分很重要，不能缺！}
 
 %==============================================第五部分================================================
 \section{Conclusion}
