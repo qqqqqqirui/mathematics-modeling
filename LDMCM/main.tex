@@ -6,8 +6,11 @@
 %官方要求字号不小于 12 号，此处选择 12 号字体
 
 %\CTEXsetup[format={\Large\bfseries}]{section} 
-\CTEXsetup[format={\bfseries}]{section} 
+\CTEXsetup[format={\Large\bfseries}]{section} 
 %在ctexart中，一级标题是居中的，这里改成左对齐
+
+%!!!
+%文字包围图片
 
 %% 本模板不需要填写年份，以当前电脑时间自动生成
 %% !!!!!!!!!再研究一下ldmcm宏包
@@ -21,6 +24,7 @@
 %\usepackage{mathpazo}  % 这是 COMAP 官方杂志采用的更好看的 Palatino 字体，可替代以上的 mathptmx 宏包
 
 \usepackage{wallpaper}
+\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{wrapfig}
 \usepackage{tcolorbox}
@@ -129,7 +133,7 @@
 %!!!!!
 %\subsection{Problem Background}%问题背景问题背景问题背景问题背景问题背景问题背景---------------------------------
 \subsection{Background}
-Wordle is an online word puzzle game invented by Josh Wardle during the epidemicThe New York Times newspaper which is well known for the games it publishes hasbought Wordle on February 2021[1]. Wordle only allows one game to be played perday, and every player in the world plays to guess the same five-letter word in six triesor less each day[2]. Players can play in regular mode or hard mode. They can sharetheir scores via Twitter, thus attracting more people to play and share
+Wordle is an online word puzzle game invented by Josh Wardle during the epidemicThe New York Times newspaper which is well known for the games it publishes hasbought Wordle on February 2021\upcite{1}. Wordle only allows one game to be played perday, and every player in the world plays to guess the same five-letter word in six triesor less each day\upcite{2}. Players can play in regular mode or hard mode. They can sharetheir scores via Twitter, thus attracting more people to play and share
 % 一些常用的写作缩略语：
 
 % i.e.,。。。也即是。。。（一定加逗号）
@@ -144,186 +148,216 @@ Wordle is an online word puzzle game invented by Josh Wardle during the epidemic
 
 
 % 美赛一定要多上图，清晰直观，并且格式上最好是矢量图，例如pdf，而不是位图，例如jpg，png等，在形式上最好是组图，下面列出了利用\verb|subfigure|实现的
-\verb|1x2,1x3,2x2|的几种组图：
+%!!!!
+%\verb|1x2,1x3,2x2|的几种组图：
 
 %% 这是一个1x2的组图
-\begin{figure}[htbp]
-	%!!!!!
-	%\centering
-	\begin{subfigure}[b]{.3\textwidth} %设置缩放比例，这里的.5代表缩放为原来的50%
-		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
-		\caption{left}\label{subfig:left}
-	\end{subfigure}
-	\hspace{10mm} %%%%%%%%%%%%%%%%%%调整子图间距
-	\begin{subfigure}[b]{.3\textwidth}
-		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
-		\caption{right}\label{subfig:right}
-	\end{subfigure}
-	\caption{Two images}\label{subfigure}
-\end{figure}
+% \begin{minipage}[b]{0.4\linewidth}
+% 	% \centering
+% 	\includegraphics[height=8\baselineskip]{img/example-image-a.pdf}
+% 	\label{subfig:right}
+% 	\caption{Wordle Game}
+% \end{minipage}
+% \begin{minipage}[b]{0.6\linewidth}
+% 	Back in October 2021,less than 5.000 visitsregistered to its web page while by January 2022traffic had skyrocketed to over 45 million. Some ofus also love this game, Figure l shows one resulthat we got. The green tile indicates that the secretsolution word has the letter in the precise locationThe yellow tile implies that the answer has theletter but not at the correct location. Grey tilesindicate the letters are not contained in the solutionat all\upcite{3}.
+% \end{minipage}
+\begin{wrapfigure}{l}{6cm}
+	\vspace{-15pt}
+	\includegraphics*[width=0.4\textwidth]{example-image-a.pdf}
+	\vspace{0pt}
+	\caption{Wordle Game}
+	\vspace{-20pt}
+\end{wrapfigure}
+Back in October 2021,less than 5.000 visits registered to its web page while by January 2022traffic had skyrocketed to over 45 million. Some ofus also love this game, Figure l shows one resulthat we got. The green tile indicates that the secretsolution word has the letter in the precise locationThe yellow tile implies that the answer has theletter but not at the correct location. Grey tilesindicate the letters are not contained in the solutionat all\upcite{3}.
 
-Figure \ref{subfigure} gives an example of subfigures. Figure \ref{subfig:left} is on the left, and Figure \ref{subfig:right} is on the right.
+	% \hspace{10mm} %%%%%%%%%%%%%%%%%%调整子图间距
+	% \begin{subfigure}[b]{.3\textwidth}
+	% 	\includegraphics[width=\textwidth]{img/example-image-b.pdf}
+	% 	\caption{right}\label{subfig:right}
+	% \end{subfigure}
+	% \label{subfigure}
+
+%Figure gives an example of subfigures. Figure \ref{subfig:left} is on the left, and Figure is on the right.
+Now we have a file of daily results from January 7, 2022 to December 31, 2022. Thisfile includes twelve key variables that are crucial in our later research. In the file, the percentages of the number of people for the seven tries may not sum to 100\% due to rounding
+
+% %% 这是一个1x3的组图
+% \begin{figure}[!htbp]
+% 	\centering
+% 	\begin{subfigure}[t]{0.3\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
+% 		\caption*{}
+% 		\label{}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{0.3\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
+% 		\caption*{}
+% 		\label{}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{0.3\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-c.pdf}
+% 		\caption*{}
+% 		\label{}
+% 	\end{subfigure}
+% 	\caption{Three images}
+% 	\label{Three images}
+% \end{figure}
 
 
-%% 这是一个1x3的组图
-\begin{figure}[!htbp]
-	\centering
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
-		\caption*{}
-		\label{}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
-		\caption*{}
-		\label{}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-c.pdf}
-		\caption*{}
-		\label{}
-	\end{subfigure}
-	\caption{Three images}
-	\label{Three images}
-\end{figure}
-
-
-%% 这是一个2x2的组图（可推广至2x3,3x3等）
-\begin{figure}[!htbp]
-	\centering
-	\begin{subfigure}[t]{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
-		\caption{左上}
-		\label{}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
-		\caption{右上}
-		\label{}
-	\end{subfigure}
-	%  \begin{subfigure}[t]{0.3\textwidth}
-	%          \centering
-	%          \includegraphics[width=\textwidth]{img/example-image-a.pdf.pdf}
-	%          \caption{}
-	%          \label{}
-	%  \end{subfigure}
-	\qquad
-	%%让图片换行，这就是实现多行组图的简单原理
-  %%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了
-  %%注意调整比例以及间距
-	\begin{subfigure}[t]{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
-		\caption{左下}
-		\label{}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
-		\caption{右下}
-		\label{}
-	\end{subfigure}
-	%\begin{subfigure}[t]{0.3\textwidth}
-	%        \centering
-	%        \includegraphics[width=\textwidth]{img/npca13.pdf}
-	%        \caption{result}
-	%        \label{}
-	%\end{subfigure}
-	\caption{组图组图变变变}
-\end{figure}
+% %% 这是一个2x2的组图（可推广至2x3,3x3等）
+% \begin{figure}[!htbp]
+% 	\centering
+% 	\begin{subfigure}[t]{0.4\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
+% 		\caption{左上}
+% 		\label{}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{0.4\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
+% 		\caption{右上}
+% 		\label{}
+% 	\end{subfigure}
+% 	%  \begin{subfigure}[t]{0.3\textwidth}
+% 	%          \centering
+% 	%          \includegraphics[width=\textwidth]{img/example-image-a.pdf.pdf}
+% 	%          \caption{}
+% 	%          \label{}
+% 	%  \end{subfigure}
+% 	\qquad
+% 	%%让图片换行，这就是实现多行组图的简单原理
+%   %%若需要搞一个2x3的组图就把上下的注释打开再添加图片就可以了
+%   %%注意调整比例以及间距
+% 	\begin{subfigure}[t]{0.4\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-a.pdf}
+% 		\caption{左下}
+% 		\label{}
+% 	\end{subfigure}
+% 	\begin{subfigure}[t]{0.4\textwidth}
+% 		\centering
+% 		\includegraphics[width=\textwidth]{img/example-image-b.pdf}
+% 		\caption{右下}
+% 		\label{}
+% 	\end{subfigure}
+% 	%\begin{subfigure}[t]{0.3\textwidth}
+% 	%        \centering
+% 	%        \includegraphics[width=\textwidth]{img/npca13.pdf}
+% 	%        \caption{result}
+% 	%        \label{}
+% 	%\end{subfigure}
+% 	\caption{组图组图变变变}
+% \end{figure}
 
 
 
 %\subsection{Problem Background}%问题重述与文献综述选一个------------------------------------------------------------------------
-\subsection{Literature Review} % 文献综述-----------------
-Two major problems are discussed in this paper, which are:
+\subsection{Problem Restatement} % 文献综述-----------------
+By analyzing the above background, we summarize the tasks that need to be addressedas follows:
 \begin{itemize}
-	\item Doing the first thing.
-	\item Doing the second thing.
+	\item Develop a model to explain the daily variation in the total number of peoplereporting scores on Twitter and use it to give a prediction interval for the totanumber of people on March 1.2023.
+	\item Determine whether the attributes of words affect the percentage of playerswho choose the hard mode and explain the obtained results accordingly.
+	\item If given a future date and the specific word, build a model to predict thepercentage of 1-X tries in this day. After that, the word EERlE on March 1. 2023should be used as a specific example of the model prediction, while analyzing theuncertainties of the model and the accuracy of the prediction.
+	\item Develop a model to classify the diffculty of the words and identify theattributes of them under each category. Use this model to determine how difficultthe word EERlE is? Finally, discuss the accuracy ofthe classification model
+	\item List and describe some other interesting features of the dataset
 \end{itemize}
-A literatrue\upcite{1} says something about this problem ...
+% A literatrue\upcite{1} says something about this problem ...
 
 
 
 \subsection{Our work}%-----------------------------------------------------------
-We do such things ...
-这部分直接上图
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=8\baselineskip]{example-image-b.pdf}
+	\caption{Our Work}
+	\vspace{-20pt}
+\end{figure}
 
-\begin{enumerate}[\bfseries 1.]
-	\item We do ...
-	\item We do ...
-	\item We do ...
-\end{enumerate}
-%===========================第二部分==模型准备==========================================================
-\section{Preparation of the Models}
-\subsection{Assumptions and Explanations}
-
+\section{Assumptions and Notations}
+\vspace{0pt}
 %为了简化问题，我们做出了以下假设，其中每一条都有对应的合理解释
-To simplify the problem, we made the following assumptions, each of which has a corresponding reasonable explanation.
-\begin{itemize}
-	\item \textit{\textbf{Assumption 1:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
+% \begin{itemize}
+% 	\item \textit{\textbf{Assumption 1:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
 
-	\item \textit{\textbf{Assumption 2:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
+% 	\item \textit{\textbf{Assumption 2:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
 
-	\item \textit{\textbf{Assumption 3:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
+% 	\item \textit{\textbf{Assumption 3:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
 
-	\item \textit{\textbf{Assumption 4:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
-\end{itemize}
+% 	\item \textit{\textbf{Assumption 4:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
+% \end{itemize}
+\textbf{Assumption 1:}The number of daily online gamers in the data set is a time-dependentset of series and is independent of seasonal changes.
+\\
+\textbf{Explanation:} Therefore, we can use ARlMA as well as LSTM models to predict a series ofdata for March 1.2023.
+\\
+\\
+\textbf{Assumption 2:}The scores reported by players on Twitter on a daily basis are normaland reliable.
+\\
+\textbf{Explanation:}To ensure that the model we build based on the dataset can reliably predict arange of data for March 1.2023.
+\\
+\\
+\textbf{Assumption 3:}Assuming that Wordle's development process is consistent with thegame's life cycle theory.
+\\
+\textbf{Explanation:} This assumption reduces the impact ofexternal uncertainties on Wordle gamepredictions, thus making the whole process of prediction and analysis more efficient.
+
 %这里只列出了主要的假设，其他假设会在专门的小节中单独讨论
-Additional assumptions are made to simplify analysis for individual sections. These assumptions will be discussed at the appropriate locations.
+In this work, we use the symbols in Table 1 in the model construction. Other none-frequent-used symbols will be introduced once they are used.
 
-\newpage
-\subsection{Notations}%-----------------------------------------------------------------------------------
-% 三线表（可以直接在excel里编辑好然后用excel2latex插件插入）
+%\subsection{Notations}%-----------------------------------------------------------------------------------
+% % 三线表（可以直接在excel里编辑好然后用excel2latex插件插入）
 
-Table \ref{tb:notation} lists some important mathematical notations used in this paper.
+%Table \centering\small\ref{tb:notation} %lists some important mathematical notations used in this paper.
+
 \begin{table}[htbp]%----------------------------------------------
+	\renewcommand{\arraystretch}{1.1}
 	\begin{center}
-		\caption{Notations used in this paper}
+		\caption{Notations}
+		\centering
 		\begin{tabular}{cl}
 			\toprule[1.5pt]
 			\multicolumn{1}{m{4cm}}{\centering \textbf{Symbol}}
-			                      & \multicolumn{1}{m{10cm}}{\textbf{ Description} }                       \\
+			                      & \multicolumn{1}{m{10cm}}{\centering \textbf{Defination} }                       \\
 			\midrule
-			$x_i$                 & Longitude within the i-th Wildfire Grid                                \\
-			$y_i$                 & Latitude within the i-th Wildfire Grid                                 \\
-			$\varOmega _i$        & The area of the i-th grid                                              \\
-			$d_{ki}$              & the distance $d_{ki}$                                                  \\
-			$SC_k$                & Score for evaluating the k-th wildfire grid                            \\
-			\vspace{5pt}%公式间有点挤，空一些
-			$x^{( \alpha )}_{ki}$ & the $SSA_\alpha$ drone sent by the k-th EOC to the i-th wild-fire grid \\
-			\vspace{3pt}
-			$x^{( \beta )}_{ki}$  & the $RR_\beta$ drone sent by the k-th EOC to the i-th wildfire grid    \\
-			$t_{fly}^{\delta}$    & The flight time of drones                                              \\
+			$w_A$                 & Longitude within the i-th Wildfire Grid                                \\
+			$w_B$                 & Latitude within the i-th Wildfire Grid                                 \\
+			$P_{Ai}$              & The area of the i-th grid                                              \\
+			$P_{Ai}$              & the distance $d_{ki}$                                                  \\
+			$L_i$                 & Score for evaluating the k-th wildfire grid                            \\
+			%\vspace{5pt}%公式间有点挤，空一些
+			%$x^{( \alpha )}_{ki}$ & the $SSA_\alpha$ drone sent by the k-th EOC to the i-th wild-fire grid \\
+			$NF$                  & Noise factor                                                           \\
+			$C_i$                 & the ratio of players at different guess counts                         \\
+			% \vspace{3pt}
+			%$x^{( \beta )}_{ki}$  & the $RR_\beta$ drone sent by the k-th EOC to the i-th wildfire grid    \\
+			%$t_{fly}^{\delta}$    & The flight time of drones                                              \\
 			\bottomrule[1.5pt]
-		\end{tabular}\label{tb:notation}
-		\begin{tablenotes}
-			\footnotesize
-			\item[*] *Some variables are not listed here and will be discussed in detail in each section. %此处加入注释*信息
-		\end{tablenotes}
+		\end{tabular}
+		\label{tb:notation}
+		% \begin{tablenotes}
+		% 	\footnotesize
+		% 	\item[*] *Some variables are not listed here and will be discussed in detail in each section. %此处加入注释*信息
+		% \end{tablenotes}
 	\end{center}
 \end{table}
-\vspace{-1cm}%在\end{table}下加一行\vspace{-1cm} 其中-1的作用是缩短与下方文字距离的 切记！必须是负数
+\vspace{-1cm}
+%在\end{table}下加一行\vspace{-1cm} 其中-1的作用是缩短与下方文字距离的 切记！必须是负数
 
 
 
 %数据处理------------------------------------------------------------------------
 
-
-\subsection{Data}
-\subsubsection{Data Collection}
+\newpage
+\section{ARIMA-BP Interval Prediction Model Based On Bootstrap}
+\subsection{Data Processing}
 %下面列出了我们收集数据的来源网站
-Websites, where we collect data, are listed in Table \ref{tb:data}.
+By reviewing the given data, we found that there are no missing values, but there areive outliers, One of them does not exist and two of them has less than 5 letters. wedeleted these three rows of data due to the difficulty ofobtaining the true values ofthesewords. The two remaining outliers are caused by data entry errors. In order to avoid anexcessive reduction in the amount of data, we changed them by combining the previousand later data as well as the semantics ofthem, In addition, the sum of the percentagesin the original data are all in [98\%, 102\%], which is not much different from 100\%, sothey are reasonable and do not need to be processed. In summary, the preprocessing ofthe raw data is summarized in Table \ref{tb:data}.
 
 \begin{table}[htbp]%----------------------------------------------
 	\begin{center}
-		\caption{Notations used in this paper}
-		\begin{tabular}{c c}
+		\caption{Data Processing}
+		\begin{tabular}{c c c c}
 			\toprule[1.5pt]
 			\multicolumn{1}{m{5cm}}{\centering \textbf{Database Names}}
 			               & \multicolumn{1}{m{10cm}}{\centering \textbf{Database Websites}}   \\
@@ -332,37 +366,153 @@ Websites, where we collect data, are listed in Table \ref{tb:data}.
 			Wikipedia      & \href{https://www.wikipedia.org}{https://www.wikipedia.org}       \\
 			wolframalpha   & \href{https://www.wolframalpha.com}{https://www.wolframalpha.com} \\
 			\bottomrule[1.5pt]
-		\end{tabular}\label{tb:data}
+		\end{tabular}
+		\label{tb:data}
 	\end{center}
 \end{table}
 \vspace{-1cm}%在\end{table}下加一行\vspace{-1cm} 其中-1的作用是缩短与下方文字距离的 切记！必须是负数
-\subsubsection{Data Processing}
+
+\subsection{Point Prediction Based on a Combined ARIMA-BP Model}
 %=================================第三部分====================================================================
-\section{Model 1}
-\subsection{Details about Model 1}
-The detail can be described by equation \eqref{eq:heat}:
-\begin{equation}\label{eq:heat}
-	\frac{\partial u}{\partial t} - a^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) = f(x, y, z, t)
-\end{equation}
+\subsubsection{Variation Explaining}
+In the data preprocessing, although there are word entry errors, their correspondingnumbers of reported results are not aflected, so the complete reported data are analyzedin this problem. By observing and analyzing the characteristics of the changes in thenumber of reported results from Jan.7, 2022 to Dec 31, 2022, we found that they canbe divided into 3 phases, as shown in Figure 3.
+\\
+Based on the game lifecycle and player lifecycle theory[4], and combined with Wordle'sgame features, we explain the reasons for the changes as follows.
 
-\section{Model 2}
-\subsection{Conclusion of Model 2}
-The results are shown in Figure \ref{fig:result}, where $t$ denotes the time in seconds, and $c$ refers to the concentration of water in the boiler.
+% \noindent
+% \begin{itemize}{\leftmargin=0pt\setlength{\parindent}{0pt}}
+% 	\item Phase 1: Rapid Growth Period (January 7\, 2022-February 2\, 2022)
+% \end{itemize}
 
-\begin{figure}[!ht]%---------------结果上图！！！！！！--------------
+\raisebox{-0.8ex}{\scalebox{2.2}{\textbullet}}\hspace{0.5em} Phase 1: Rapid Growth Period (January 7\, 2022-February 2\, 2022)
+
+Since the launch of Wordle's web version, it has been updated with only one puzzle aday. This artificial scarcity enhances players' desire for challenge and anticipation. Thesharing function of Wordle uses emoji blocks to refer to the results of the game, whichis very recognizable and easy to spread, while also avoiding spoilers, thus attractingmore new players to play Wordle. In addition, the traditional popularity of crosswordpuzzles and the easy-to-play game mechanics have contributed to Wordle's furtheipopularity. During this period, Wordle's overall growth in the number ofresults reportedis 348.85\%, with the number peaking at 361.908 on February 2.
+
+% \begin{equation}\label{eq:heat}
+% 	\frac{\partial u}{\partial t} - a^2 \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) = f(x, y, z, t)
+% \end{equation}
+
+\begin{figure}[htbp]
 	\centering
-	\includegraphics[width=.5\textwidth]{water.png}
-	\caption{The result of Model 2}\label{fig:result}
-\end{figure}%---------------------------------------------
+	\includegraphics[height=9\baselineskip]{water.png}
+	\caption{Changes in the number of reported results}
+\end{figure}
 
-再来一个伪代码，默认样式为\texttt{隐藏行号的三线表形式的伪代码}
+\raisebox{-0.8ex}{\scalebox{2.2}{\textbullet}}\hspace{0.5em} Parse 2: Rapid Decline Period (February 3, 2022 - May 29,2022)
+During this period, Wordle experiences an overall 84.29\% decline in the number ofreported results, which is the general nature of internet fads. When the popularity ofthegame reaches its peak, it faces a significant loss of players due to gamers’declininginterest and boredom with the game. The singularity of Wordle's game mechanic cancontribute to this. Furthermore, the emergence of competing games in the market suchas “Words with Friends’ and Wordle's pirated games makes Wordle lose players further
+% \section{Model 2}
+% \subsection{Conclusion of Model 2}
+% The results are shown in Figure \ref{fig:result}, where $t$ denotes the time in seconds, and $c$ refers to the concentration of water in the boiler.
 
-可在\verb|ldmcm.sty|中修改样式，更详细的用法请参考algorithm2e宏包文档
-%%%%%%%%%%伪代码%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!ht]%---------------结果上图！！！！！！--------------
+% 	\centering
+% 	\includegraphics[width=.5\textwidth]{water.png}
+% 	\caption{The result of Model 2}\label{fig:result}
+% \end{figure}%---------------------------------------------
+
+%!!!!!!伪代码
+% 再来一个伪代码，默认样式为\texttt{隐藏行号的三线表形式的伪代码}
+
+% 可在\verb|ldmcm.sty|中修改样式，更详细的用法请参考algorithm2e宏包文档
+% %%%%%%%%%%伪代码%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{algorithm}[H]
+% 	\KwIn{输入}
+% 	\KwOut{输出 }
+% 	initialization\;
+% 	\While{not at end of this document}{
+% 		read current\;
+% 		\Repeat{this end condition}{
+% 			do these things\;
+% 		}
+% 		\eIf{understand}{
+% 			go to next section\;
+% 			current section becomes this one\;
+% 		}{
+% 			go back to the beginning of current section\;
+% 		}
+% 		\Do{this end condition}{
+% 			do these things\;
+% 		}
+% 	}
+% 	\caption{How to write algorithms}
+% \end{algorithm}
+% %%%%%%%%%%伪代码%%%%%%%%%%%%%%%%%%%%%%
+
+\raisebox{-0.8ex}{\scalebox{2.2}{\textbullet}}\hspace{0.5em} Parse 3: Stable Reduction Period (May 30,2022-December 31,2022)
+The overall decrease in the number of results reported for Wordle in this phase is 64.14\%. Rapidly losing players in Phase 2 go to play Wordle generally because of itspopularity among the general public and they will quickly leave when Wordle is nolonger hot or the next trend emerges. The remaining players are often loyal Wordleplayers or players who have developed user stickiness due to the game's social circleAt this point, the number of reports will still drop but not by much.
+
+
+\subsubsection{Reasons for Model Selection}
+Predicting the number of reported results is a problem in the field oftime series analysisThe traditional ARlMA model is capable of extracting deterministic information fromhistorical data in order to predict the trend of variables over time, however, this moderequires extensive testing before application, and the process of determining the orderofthe model is subjective to some extent [5]. In recent years, with the development ofartificial intelligence, machine learning algorithms have been widely applied to the fieldof data classification and prediction. Among which, BP neural network model which iseficient and convenient can effectively break the limits of traditional time seriesprediction models. Considering these factors, we decide to combine the advantages oftraditional time series models and machine learning models. It means that first of all.we use ARlMA model and BP neural network model to predict the number of reportedoutcomes separately, and then we use weighted average to combine the two models toobtain a more reliable ARlMA-BP combined prediction model.
+
+%The instance of long and wide tables are shown in Table \ref{tb:longtable}.
+
+% 长表格示例，更多用法请参考 longtable 宏包文档
+% 以下环境及对应参数可实现表格内的自动换行与表格的自动断页
+% 您也可以选择自行载入 tabularx 宏包，并通过 X 参数指定对应列自动换行
+% \begin{longtable}{ p{4em} p{14em} p{14em} }
+% 	\caption{Basic Information about Three Main Continents (scratched from Wikipedia)}
+% 	\label{tb:longtable}                                                                                                                      \\
+% 	\toprule
+% 	Continent                                                  & Description                                                    & Information \\
+% 	\midrule
+% 	Africa                                                     & Africa Continent is surrounded by the Mediterranean Sea to the
+% 	north, the Isthmus of Suez and the Red Sea to the northeast, the Indian
+% 	Ocean to the southeast and the Atlantic Ocean to the west. &
+% 	At about 30.3 million km$^2$ including adjacent islands, it covers 6\%
+% 	of Earth's total surface area and 20\% of its land area. With 1.3
+% 	billion people as of 2018, it accounts for about 16\% of the world's
+% 	human population.                                                                                                                         \\
+% 	\midrule
+% 	Asia                                                       & Asia is Earth's largest and most populous continent which
+% 	located primarily in the Eastern and Northern Hemispheres.
+% 	It shares the continental landmass of Eurasia with the continent
+% 	of Europe and the continental landmass of Afro-Eurasia with both
+% 	Europe and Africa.                                         &
+% 	Asia covers an area of 44,579,000 square kilometres, about 30\%
+% 	of Earth's total land area and 8.7\% of the Earth's total surface
+% 	area. Its 4.5 billion people (as of June 2019) constitute roughly
+% 	60\% of the world's population.                                                                                                           \\
+% 	\midrule
+% 	Europe                                                     & Europe is a continent located entirely in the Northern
+% 	Hemisphere and mostly in the Eastern Hemisphere. It comprises the
+% 	westernmost part of Eurasia and is bordered by the Arctic Ocean to
+% 	the north, the Atlantic Ocean to the west, the Mediterranean Sea to
+% 	the south, and Asia to the east.                           &
+% 	Europe covers about 10,180,000 km$^2$, or 2\% of the Earth's surface
+% 	(6.8\% of land area), making it the second-smallest
+% 	continent. Europe had a total population of about 741 million (about
+% 	11\% of the world population) as of 2018.                                                                                                 \\
+% 	\bottomrule
+% \end{longtable}
+
+\subsubsection{ARIMA Forecasting}
+We first used the traditional ARlMA model for point prediction of the number ofreported results, and this process is shown in \ref{fg:process}:
+\begin{figure}[htbp]
+	\includegraphics[width=\textwidth]{1706015643684.png}
+	\caption{ARIMA model building process}
+	\label{fg:process}
+\end{figure}
+
+First, we performed ADF smoothness test on the variable “Number ofreported resultsin the preprocessed data set and found that it wasn't smooth. Therefore, we differencedthe series to the first order and tested the diferenced series again. After that, weobserved the ACF and PACF plot of the differenced series, and found that the ACF plotshowed the characteristics of trailing tails and the PACF plot showed the characteristicsof lst order truncated tails. Therefore, the following ARIMA(1.1.0) model can bedeveloped for the original series:
+
+\begin{equation}
+	\centering
+	\begin{cases}
+		(1-\phi_1B)(1-B)x_t=\varepsilon_t\\
+		E(\varepsilon_t)=0,Var(\varepsilon_t)={\sigma_{\varepsilon}}^2,E(\varepsilon_t\varepsilon_s)=0,s\neq t,\\
+		E(x_s\varepsilon_t)=\mathbf{0},\forall s<t
+	\end{cases}
+\end{equation}
+where $x_t$ is the $t^th$ time series value, $B$ is the delay operator, $\phi_1$ is the coeffcient of the moving self-averaging polynomial.
+
+\subsubsection{BP Neural Network Prediction}
+BP neural network is a multilayer feedforward neural network trained according to theerror back propagation algorithm, which can iterate and repair its own weightscontinuously based on the relationship between input and output variables so as tofinally estimate the exact functional relationship\upcite{6}. Its algorithm is explained by thefollowing pseudo-code. :
 
 \begin{algorithm}[H]
-	\KwIn{输入}
-	\KwOut{输出 }
+	\KwIn{Training set D}
+	\KwOut{Test set E}
 	initialization\;
 	\While{not at end of this document}{
 		read current\;
@@ -381,57 +531,7 @@ The results are shown in Figure \ref{fig:result}, where $t$ denotes the time in 
 	}
 	\caption{How to write algorithms}
 \end{algorithm}
-%%%%%%%%%%伪代码%%%%%%%%%%%%%%%%%%%%%%
 
-
-\clearpage
-\subsection{Commetary on Model 2}
-The instance of long and wide tables are shown in Table \ref{tb:longtable}.
-
-% 长表格示例，更多用法请参考 longtable 宏包文档
-% 以下环境及对应参数可实现表格内的自动换行与表格的自动断页
-% 您也可以选择自行载入 tabularx 宏包，并通过 X 参数指定对应列自动换行
-\begin{longtable}{ p{4em} p{14em} p{14em} }
-	\caption{Basic Information about Three Main Continents (scratched from Wikipedia)}
-	\label{tb:longtable}                                                                                                                      \\
-	\toprule
-	Continent                                                  & Description                                                    & Information \\
-	\midrule
-	Africa                                                     & Africa Continent is surrounded by the Mediterranean Sea to the
-	north, the Isthmus of Suez and the Red Sea to the northeast, the Indian
-	Ocean to the southeast and the Atlantic Ocean to the west. &
-	At about 30.3 million km$^2$ including adjacent islands, it covers 6\%
-	of Earth's total surface area and 20\% of its land area. With 1.3
-	billion people as of 2018, it accounts for about 16\% of the world's
-	human population.                                                                                                                         \\
-	\midrule
-	Asia                                                       & Asia is Earth's largest and most populous continent which
-	located primarily in the Eastern and Northern Hemispheres.
-	It shares the continental landmass of Eurasia with the continent
-	of Europe and the continental landmass of Afro-Eurasia with both
-	Europe and Africa.                                         &
-	Asia covers an area of 44,579,000 square kilometres, about 30\%
-	of Earth's total land area and 8.7\% of the Earth's total surface
-	area. Its 4.5 billion people (as of June 2019) constitute roughly
-	60\% of the world's population.                                                                                                           \\
-	\midrule
-	Europe                                                     & Europe is a continent located entirely in the Northern
-	Hemisphere and mostly in the Eastern Hemisphere. It comprises the
-	westernmost part of Eurasia and is bordered by the Arctic Ocean to
-	the north, the Atlantic Ocean to the west, the Mediterranean Sea to
-	the south, and Asia to the east.                           &
-	Europe covers about 10,180,000 km$^2$, or 2\% of the Earth's surface
-	(6.8\% of land area), making it the second-smallest
-	continent. Europe had a total population of about 741 million (about
-	11\% of the world population) as of 2018.                                                                                                 \\
-	\bottomrule
-\end{longtable}
-
-
-
-
-
-\section{Model 3}
 %===============================================第四部分=============================================
 \section{Test the Model}
 \subsection{Sensitivity  Analysis}
