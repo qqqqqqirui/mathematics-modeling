@@ -71,55 +71,6 @@
 	Finally, we evaluated and refined the model and reported the findings in a letter to thethe Puzzle Editor of the New York Times.
 	
 	\textbf{Keywords}: ARIMA-BP,LSTM, GMM, Apriori Algorithm, Word Attributes
-	% %第二段：总结我们用了什么模型
-	% Several models are established: Model I: Rasterized Multi-Objective Optimization Model; Model II: Model Verification Simulated by Poisson Process; Model III: Hovering Model Based on Tabu Search, etc.
-
-	% %接下来分别介绍模型与结果
-	% For Model I:
-	% Firstly,%首先，我们从哪里收集到了什么样的数据
-	% We find data。。。
-	% Then,%然后，基于什么样的原因，我们建立了什么模型
-	% we establish \textbf{model}。。。
-	% Next,%我们选择或者设计了什么算法
-	% we use Algorithm。。。
-	% Finally,%我们得到了什么样的结果
-	% %数值直接写出来，大量数据（表）或图片则说请参见(are shown in ...)图几
-	% %注意要用文字，不要使用符号
-	% it can be seen that。。。
-
-	% For Model II:
-	% Firstly,%首先，我们从哪里收集到了什么样的数据
-	% We find data。。。
-	% Then,%然后，基于什么样的原因，我们建立了什么模型
-	% we establish model。。。
-	% Next,%我们选择或者设计了什么算法
-	% we use Algorithm。。。
-	% Finally,%我们得到了什么样的结果
-	% %数值直接写出来，大量数据（表）或图片则说请参见(are shown in ...)图几
-	% %注意要用文字，不要使用符号
-	% it can be seen that。。。
-
-	% For Model III:
-	% Firstly,%首先，我们从哪里收集到了什么样的数据
-	% We find data。。。
-	% Then,%然后，基于什么样的原因，我们建立了什么模型
-	% we establish model。。。
-	% Next,%我们选择或者设计了什么算法
-	% we use Algorithm。。。
-	% Finally,%我们得到了什么样的结果
-	% %数值直接写出来，大量数据（表）或图片则说请参见(are shown in ...)图几
-	% %注意要用文字，不要使用符号
-	% it can be seen that。。。
-
-	% %灵敏度与稳健性分析
-	% Finally, sensitivity analysis 。。。 Meanwhile, robustness
-
-
-
-	% 美赛论文中无需注明关键词。若一定要使用，
-	% 请将以下两行的注释号 '%' 去除，以使其生效
-	%\vspace{5pt}
-	%\textbf{Keywords}: MATLAB, mathematics, LaTeX.
 
 \end{abstract}
 
@@ -281,16 +232,7 @@ By analyzing the above background, we summarize the tasks that need to be addres
 
 \section{Assumptions and Notations}
 \vspace{0pt}
-%为了简化问题，我们做出了以下假设，其中每一条都有对应的合理解释
-% \begin{itemize}
-% 	\item \textit{\textbf{Assumption 1:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
 
-% 	\item \textit{\textbf{Assumption 2:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
-
-% 	\item \textit{\textbf{Assumption 3:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
-
-% 	\item \textit{\textbf{Assumption 4:}}假设\\$\hookrightarrow$ \textit{\textbf{Explanation:}}理由
-% \end{itemize}
 \textbf{Assumption 1:}The number of daily online gamers in the data set is a time-dependentset of series and is independent of seasonal changes.
 \\
 \textbf{Explanation:} Therefore, we can use ARlMA as well as LSTM models to predict a series ofdata for March 1.2023.
@@ -381,12 +323,6 @@ By reviewing the given data, we found that there are no missing values, but ther
 In the data preprocessing, although there are word entry errors, their correspondingnumbers of reported results are not aflected, so the complete reported data are analyzedin this problem. By observing and analyzing the characteristics of the changes in thenumber of reported results from Jan.7, 2022 to Dec 31, 2022, we found that they canbe divided into 3 phases, as shown in Figure 3.
 \\
 Based on the game lifecycle and player lifecycle theory[4], and combined with Wordle'sgame features, we explain the reasons for the changes as follows.
-
-% \noindent
-% \begin{itemize}{\leftmargin=0pt\setlength{\parindent}{0pt}}
-% 	\item {Phase 1:} 
-% 	\\Rapid Growth Period (January 7\, 2022-February 2\, 2022)
-% \end{itemize}
 
 \raisebox{-0.8ex}{\scalebox{2.2}{\textbullet}}\hspace{0.5em} Phase 1: Rapid Growth Period (January 7\, 2022-February 2\, 2022)
 
@@ -513,29 +449,6 @@ where $x_t$ is the $t^th$ time series value, $B$ is the delay operator, $\phi_1$
 
 \subsubsection{BP Neural Network Prediction}
 BP neural network is a multilayer feedforward neural network trained according to theerror back propagation algorithm, which can iterate and repair its own weightscontinuously based on the relationship between input and output variables so as tofinally estimate the exact functional relationship\upcite{6}. Its algorithm is explained by thefollowing pseudo-code. :
-
-
-% \begin{algorithm}[H]
-% 	\KwIn{Training set D}
-% 	\KwOut{test set E}{
-% 		% initialization\;
-% 		\hspace{1.5em}\begin{tabular}{|l}
-% 			Learning rate ŋ;Data normalization(normalization formula)\\
-% 			Create network;Train the network
-% 		\end{tabular}
-		
-% 		\hspace{1.5em}\begin{tabular}{|l}
-% 			\hspace{2em}\begin{tabular}{|l}
-% 				repeat for D\\
-% 				Forward propagation;Backward propagation\\
-% 				until for reaches end condition
-% 			\end{tabular}\\
-% 			Using the network;Inverse normalization of data\\
-% 			BP neural network prediction with test set E
-% 		\end{tabular}
-		
-% 	\textbf{end:}The completed BP neural network trained}
-% \end{algorithm}
 
 \begin{algorithm}[H]
 	\KwIn{Training set $D$}
@@ -672,6 +585,72 @@ The dependent variable (Y) is the percentage of scores reported that were played
 	Y=\frac{Number in hard mode}{Number of reported results}\times100\%
 	\label{eq:4}
 \end{equation}
+
+Descriptive statistics for all variables identified are shown in Figure 10 and Table 4. Asseen in (a), there are more uncommon words in the dataset than common ones, andmore words with initial consonant letters than vowel letters, as seen in (b), there are themost nouns in the dataset, accounting for 53\%,61\% of words with only one yowel letter
+
+\begin{figure}[!htbp]
+	\centering
+	\begin{subfigure}[t]{0.55\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{1706031763710.png}
+		\caption*{(a) X2-X3}
+		\label{a}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{1706031798516(1).png}
+		\caption*{(b) X1,X4-X5}
+		\label{b}
+	\end{subfigure}
+	\caption{Three images}
+	\label{Three images}
+\end{figure}
+
+As seen in Table \ref{tb:4}, the average value ofemotional polarity value among the 356 wordsis 0.0355, which is positive, the average value of word internal distance is 33.3726; theaverage percentage of people reported to play hard mode is 7.52\%
+
+\begin{table}[htbp]
+    \centering  % 居中
+    \caption{Confidence Intervals}
+	\arrayrulecolor{blue}
+	\setlength{\tabcolsep}{0.02\textwidth}{
+    \begin{tabular}{c c c c c}
+		\arrayrulecolor{blue}\hline
+        \textbf{Confidence level} & \textbf{Lower limit} & \textbf{Upper limit} & \textbf{Average} & \textbf{Standard deviation}\\
+        \arrayrulecolor{blue}\hline
+		\rowcolor{blue!20}X6 & -1 & 0.999 & 0.0355 & 0.6448\\
+        X7 & 7 & 71 & 33.3726 & 11.9655 \\
+        \rowcolor{blue!20}Y & 1.17\% & 13.33\% & 7.52\% & 0.0223 \\
+		\arrayrulecolor{blue}\hline
+    \end{tabular}}
+    \label{tab:4}
+\end{table}
+
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
+	\centering
+	\caption{Add caption}
+	\arrayrulecolor{blue}
+	  \begin{tabular}{cccccc}
+		\toprule
+	  \rowcolor[rgb]{ .706,  .776,  .906} Letters that & Letters that may & \multirow{2}[0]{*}{Conf} & Letters that & Letters that may & \multirow{2}[0]{*}{Conf} \\
+	  \rowcolor[rgb]{ .706,  .776,  .906} appear & appear together &       & appear & appear together &  \\
+	 \midrule
+	  a/k/s & e     & 1     & e/n/r & i     & 1 \\
+	  l/p/t & a     & 1     & p/r/t & e     & 1 \\
+	  b/e/n & i     & 1     & g/h/t & i     & 1 \\
+	  c/r/t & e     & 1     & i/m/s & t     & 1 \\
+	  d/p/t & e     & 1     & d/f   & e/t   & 0.6 \\
+	  h/i/s & e     & 1     & f/t   & l/o   & 0.5 \\
+	  \bottomrule
+	  \end{tabular}%
+	
+	\label{tab:addlabel}%
+  \end{table}%
+  
+  
+
+  
 %\texttt{这部分很重要，不能缺！}
 
 %==============================================第五部分================================================
