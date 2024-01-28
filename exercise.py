@@ -11,16 +11,18 @@ import pandas as pd
 # # Create the data
 # categories = ['1', '2', '3', '4', '5', '6', 'X']
 # values = [0, 6, 22, 33, 24, 12, 3]
-#
+# 
 # # Create the bar chart
 # plt.bar(categories, values)
-#
+# 
 # # Set the title and labels
 # plt.title('Bar Chart of Categories')
 # plt.xlabel('Categories')
 # plt.ylabel('Values')
-#
+# 
 # # Show the plot
+# #加标题！！！！！！
+# plt.title('TSNE, clutering by KMeans')
 # plt.show()
 
 
