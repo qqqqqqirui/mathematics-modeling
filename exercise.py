@@ -25,11 +25,10 @@ import pandas as pd
 # plt.title('TSNE, clutering by KMeans')
 # plt.show()
 
-
 # another bar chart
 #方式2：
-df3 = {'chinese':109, 'American':88, 'German': 66, 'Korea':23, 'Japan':5, 'England':118}
-df5 = pd.DataFrame({"key": df3.keys(), "value": df3.values()})
+df3 = {'strate_mom':0.154795344855160, 'psych_mom':0.235914838267283, 'isace': 0.00462006957930888, 'isserver':0.0170685498888039, 'serve_depth':0.0327175260371862, 'serve_width':0.0539408804051049, 'return_depth':0.0289050427262831, 'speed_mph':0.0995767306286590, 'double_fault':0.00693010436896332, 'break_pt_won':0.00554408349517065 , 'unf_err':0.0176594210577689, 'winner':0.0177901414730189, 'rest_variable':0.0792326024227123, 'chushi_shitou_cha':0.245304664794576}
+df5 = pd.DataFrame({"variables": df3.keys(), "importance": df3.values()})
 print(df5.values)
 print(df5)
 row=[]

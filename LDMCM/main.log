@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  24 JAN 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.20)  31 JAN 2024 21:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -910,8 +910,11 @@ File: UTF8.chr 2021/10/16 4.8.5
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 49.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+) (./main.aux
+
+LaTeX Warning: Label `Three images' multiply defined.
+
 )
-No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -996,6 +999,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1054,6 +1058,7 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks51
 )
 Package hyperref Info: Link coloring ON on input line 49.
+ (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1062,51 +1067,41 @@ Package hyperref Info: Link coloring ON on input line 49.
 File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfTeX and DVIPDFMx (CTEX)
 {d:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
-{d:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-No file main.toc.
-\tf@toc=\write6
-\openout6 = `main.toc'.
-
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 79.
-
-[2]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 90.
+{d:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./main.toc
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 2.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 90.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 2.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 90.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 2.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 90.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 2.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 90.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2.
  (d:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
-
-
-LaTeX Warning: Citation `1' on page 3 undefined on input line 90.
-
-
-LaTeX Warning: Citation `2' on page 3 undefined on input line 90.
-
-<example-image-a.pdf, id=18, 321.2pt x 240.9pt>
+<example-image-a.pdf, id=148, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
 Package pdftex.def Info: example-image-a.pdf  used on input line 120.
@@ -1117,7 +1112,14 @@ Overfull \hbox (1.2827pt too wide) in paragraph at lines 120--122
  []
 
 
-LaTeX Warning: Citation `3' on page 3 undefined on input line 125.
+Underfull \hbox (badness 1092) in paragraph at lines 125--126
+[][]\T1/ptm/m/n/12 Back in Oc-to-ber 2021,less than 5.000 vis-
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 125--126
+\T1/ptm/m/n/12 2022traf-fic had sky-rock-eted to over 45 mil-lion.
+ []
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 215.
 (d:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -1127,19 +1129,16 @@ Overfull \hbox (4.3302pt too wide) in paragraph at lines 216--217
 []\T1/ptm/m/n/12 Determine whether the at-tributes of words af-fect the per-cent-age of play-er-swho choose
  []
 
-<example-image-b.pdf, id=20, 321.2pt x 240.9pt>
+<example-image-b.pdf, id=151, 321.2pt x 240.9pt>
 File: example-image-b.pdf Graphic file (type pdf)
 <use example-image-b.pdf>
 Package pdftex.def Info: example-image-b.pdf  used on input line 228.
 (pdftex.def)             Requested size: 154.66435pt x 116.0pt.
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 231.
-
 [3
 
  <d:/texlive/2023/texmf-dist/tex/latex/mwe/example-image-a.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 236--249
-
+Overfull \hbox (7.52322pt too wide) in paragraph at lines 236--249
+[]\T1/ptm/b/n/12 Assumption 1:\T1/ptm/m/n/12 The num-ber of daily on-line gamers in the data set is a time-dependentset
  []
 
 
@@ -1148,18 +1147,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--249
  []
 
 
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 296.
+Underfull \hbox (badness 10000) in paragraph at lines 236--249
+
+ []
 
 [4 <d:/texlive/2023/texmf-dist/tex/latex/mwe/example-image-b.pdf>]
-
-LaTeX Warning: Reference `tb:data' on page 5 undefined on input line 300.
+Overfull \hbox (2.57912pt too wide) in paragraph at lines 300--301
+\T1/ptm/m/n/12 areive out-liers, One of them does not ex-ist and two of them has less than 5 let-ters. wedeleted
+ []
 
 
 Overfull \hbox (20.78671pt too wide) in paragraph at lines 305--316
  [] 
  []
 
-<img//water.png, id=52, 390.45876pt x 281.05pt>
+<img//water.png, id=185, 390.45876pt x 281.05pt>
 File: img//water.png Graphic file (type png)
 <use img//water.png>
 Package pdftex.def Info: img//water.png  used on input line 337.
@@ -1169,97 +1171,55 @@ LaTeX Font Info:    Trying to load font information for C70+rm on input line 342
 File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
 )
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (quanjiao) on input line 342.
-
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 346.
-
-[5]
-
-LaTeX Warning: Reference `fg:process' on page 6 undefined on input line 431.
-
-<img//1706015643684.png, id=64, 331.73938pt x 69.76062pt>
+ [5]
+<img//1706015643684.png, id=195, 331.73938pt x 69.76062pt>
 File: img//1706015643684.png Graphic file (type png)
 <use img//1706015643684.png>
 Package pdftex.def Info: img//1706015643684.png  used on input line 433.
 (pdftex.def)             Requested size: 430.00462pt x 90.42905pt.
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 437.
-
-[6 <./img//water.png>]
+ [6 <./img//water.png>]
 
 LaTeX Warning: Citation `6' on page 7 undefined on input line 451.
 
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 475.
-
 [7 <./img//1706015643684.png>]
-
-LaTeX Warning: Reference `fg:5' on page 8 undefined on input line 476.
-
-
-LaTeX Warning: Reference `fg:6' on page 8 undefined on input line 476.
-
-<img//1706018588496.png, id=88, 335.75438pt x 214.30063pt>
+<img//1706018588496.png, id=220, 335.75438pt x 214.30063pt>
 File: img//1706018588496.png Graphic file (type png)
 <use img//1706018588496.png>
 Package pdftex.def Info: img//1706018588496.png  used on input line 481.
 (pdftex.def)             Requested size: 171.99922pt x 109.78236pt.
-<img//1706018630565.png, id=89, 340.77313pt x 217.31187pt>
+<img//1706018630565.png, id=221, 340.77313pt x 217.31187pt>
 File: img//1706018630565.png Graphic file (type png)
 <use img//1706018630565.png>
 Package pdftex.def Info: img//1706018630565.png  used on input line 487.
 (pdftex.def)             Requested size: 171.99922pt x 109.6836pt.
-
-LaTeX Warning: Reference `fg:7' on page 8 undefined on input line 498.
-
-<img//1706018870335.png, id=90, 468.24937pt x 77.28876pt>
+<img//1706018870335.png, id=223, 468.24937pt x 77.28876pt>
 File: img//1706018870335.png Graphic file (type png)
 <use img//1706018870335.png>
 Package pdftex.def Info: img//1706018870335.png  used on input line 501.
 (pdftex.def)             Requested size: 430.00462pt x 70.98032pt.
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 512.
-
-[8 <./img//1706018588496.png> <./img//1706018630565.png>]
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 520.
-
-[9 <./img//1706018870335.png>]
-<img//1706020552100.png, id=109, 402.00188pt x 206.7725pt>
+ [8 <./img//1706018588496.png> <./img//1706018630565.png>] [9 <./img//1706018870335.png>]
+<img//1706020552100.png, id=242, 402.00188pt x 206.7725pt>
 File: img//1706020552100.png Graphic file (type png)
 <use img//1706020552100.png>
 Package pdftex.def Info: img//1706020552100.png  used on input line 524.
 (pdftex.def)             Requested size: 430.00462pt x 221.17497pt.
 
-
-LaTeX Warning: Reference `tab:addlabel' on page 10 undefined on input line 544.
-
-
 Overfull \hbox (7.018pt too wide) in paragraph at lines 553--565
  [][] 
  []
-
-
-LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 565.
 
 [10 <./img//1706020552100.png>]
 Overfull \hbox (3.56425pt too wide) in paragraph at lines 567--567
 |[]\T1/ptm/b/n/17.28 Exploring the Im-pact of Word At-tributes on Hard Mode
  []
 
-
-LaTeX Warning: Reference `eq:4' on page 11 undefined on input line 583.
-
-
-LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 587.
-
 [11]
-<img//1706031763710.png, id=128, 252.945pt x 160.09813pt>
+<img//1706031763710.png, id=260, 252.945pt x 160.09813pt>
 File: img//1706031763710.png Graphic file (type png)
 <use img//1706031763710.png>
 Package pdftex.def Info: img//1706031763710.png  used on input line 595.
 (pdftex.def)             Requested size: 236.50385pt x 149.69585pt.
-<img//1706031798516(1).png, id=129, 179.67125pt x 155.58125pt>
+<img//1706031798516(1).png, id=261, 179.67125pt x 155.58125pt>
 File: img//1706031798516(1).png Graphic file (type png)
 <use img//1706031798516(1).png>
 Package pdftex.def Info: img//1706031798516(1).png  used on input line 601.
@@ -1268,24 +1228,17 @@ Package pdftex.def Info: img//1706031798516(1).png  used on input line 601.
 
 LaTeX Warning: Reference `tb:4' on page 12 undefined on input line 609.
 
-<img//1706066777714.jpg, id=130, 698.10812pt x 181.67876pt>
+<img//1706066777714.jpg, id=262, 698.10812pt x 181.67876pt>
 File: img//1706066777714.jpg Graphic file (type jpg)
 <use img//1706066777714.jpg>
 Package pdftex.def Info: img//1706066777714.jpg  used on input line 630.
 (pdftex.def)             Requested size: 430.00462pt x 111.90779pt.
-<img//1706065292593(1).jpg, id=131, 527.47063pt x 134.00063pt>
+<img//1706065292593(1).jpg, id=263, 527.47063pt x 134.00063pt>
 File: img//1706065292593(1).jpg Graphic file (type jpg)
 <use img//1706065292593(1).jpg>
 Package pdftex.def Info: img//1706065292593(1).jpg  used on input line 657.
 (pdftex.def)             Requested size: 430.00146pt x 115.99889pt.
-
-LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 681.
-
-[12 <./img//1706031763710.png> <./img//1706031798516(1).png>]
-
-LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 704.
-
-[13 <./img//1706066777714.jpg> <./img//1706065292593(1).jpg>]
+[12 <./img//1706031763710.png> <./img//1706031798516(1).png>] [13 <./img//1706066777714.jpg> <./img//1706065292593(1).jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\<let>-command' on input line 709.
@@ -1338,28 +1291,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\z@skip' on input line 709.
 
-
-LaTeX Warning: Citation `1' on page 14 undefined on input line 783.
-
-
-LaTeX Warning: Citation `2' on page 14 undefined on input line 783.
-
-<img/letter1.png, id=154, 2713.13625pt x 3521.155pt>
+<img/letter1.png, id=286, 2713.13625pt x 3521.155pt>
 File: img/letter1.png Graphic file (type png)
 <use img/letter1.png>
 Package pdftex.def Info: img/letter1.png  used on input line 787.
 (pdftex.def)             Requested size: 612.54068pt x 794.96585pt.
 [14
 
- <./img/letter1.png>]
-
-LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 792.
-
-[15]
-
-LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 806.
-
-[16
+ <./img/letter1.png>] [15] [16
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1368,33 +1307,24 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  2512BC764590C0934BE078457A3102E1;5144.
-
-Package lastpage Warning: Rerun to get the references right on input line 806.
-
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 2512BC764590C0934BE078457A3102E1;5144.
  ) 
 Here is how much of TeX's memory you used:
- 31063 strings out of 476025
- 580530 string characters out of 5794015
+ 31095 strings out of 476025
+ 581028 string characters out of 5794015
  1867382 words of memory out of 5000000
- 50810 multiletter control sequences out of 15000+600000
- 571022 words of font info for 114 fonts, out of 8000000 for 9000
+ 50835 multiletter control sequences out of 15000+600000
+ 568219 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,20n,91p,1248b,597s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,20n,91p,1248b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Windows/Fonts/simsun.ttc><d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss17.pfb><d:/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><d:/texlive/2023/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><d:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (16 pages, 1081933 bytes).
+Output written on main.pdf (16 pages, 1086735 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 363 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
  66 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 288 words of extra memory for PDF output out of 10000 (max. 10000000)
 
