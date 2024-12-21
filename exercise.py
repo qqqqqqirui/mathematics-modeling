@@ -157,3 +157,36 @@ plt.legend(["同学 A", "同学 B"], loc='best')
 
 # 显示图形
 plt.show()
+
+
+
+###商务统计画图第二次作业
+import random
+import plotly.graph_objects as go
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def calculate_probability(num_trials):
+    count_seven = 0
+    for _ in range(num_trials):
+        dice1 = roll_dice()
+        dice2 = roll_dice()
+        if dice1 + dice2 == 7:
+            count_seven += 1
+    return count_seven / num_trials
+
+num_trials_list = [10, 100, 1000, 10000, 20000, 1000000]
+probabilities = []
+
+for num_trials in num_trials_list:
+    probabilities.append(calculate_probability(num_trials))
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=num_trials_list, y=probabilities, mode='lines+markers', name='Probability of Sum = 7'))
+fig.update_layout(title='和为7的概率随实验次数变化',
+                  xaxis_title='实验次数',
+                  yaxis_title='和为7的概率',
+                  xaxis_type='log')
+fig.show()
+
